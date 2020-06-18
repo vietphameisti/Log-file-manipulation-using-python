@@ -45,7 +45,7 @@ df_output =df_rank.groupby(['country'])['song_count'].apply(lambda x: ", ".join(
 
 #export dataframe to txt file
 filename_country='country_top50_'+str(datetime.date.today())
-df_output.to_csv(f'{filename_country}.txt', sep='|', header=False, index=False )
+df_output.head(50).to_csv(f'{filename_country}.txt', sep='|', header=False, index=False )
 
 
 ##NICE TO HAVE USER TOP 50
@@ -57,5 +57,5 @@ dfg_user_output =dfgUser.groupby(['user'])['song_count'].apply(lambda x: ", ".jo
 
 #export dataframe to txt file
 filename_user='user_top50_'+str(datetime.date.today())
-dfg_user_output.to_csv(f'{filename_user}.txt', sep='|', header=False, index=False )
+dfg_user_output.head(50).to_csv(f'{filename_user}.txt', sep='|', header=False, index=False )
 
